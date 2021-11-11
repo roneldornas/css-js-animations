@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 99.9vh;
+  display: flex;
+  background: #fff;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff1 0px,
+    #fff1 1px,
+    transparent 1px,
+    transparent 10px
+  ),
+    repeating-linear-gradient(
+      0deg,
+      #fff1 0px,
+      #fff1 1px,
+      transparent 1px,
+      transparent 10px
+    );
+  background-size: 10px 10px;
+}
+
+.container .card {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  transition: .5s ease-in-out;
+}
+
+.container .card:hover {
+  flex-grow: 3;
+  background: #1a1a1a;
+}
+
+.container .card ion-icon {
+  font-size: 15vw;
+  transition: .5s ease-in-out;
+  color: #1a1a1a;
+}
+
+.container .card:hover ion-icon {
+  color: #fff;
+  font-size: 25vw;
+}
+
+.container .card:nth-child(1):hover ion-icon {
+  filter: drop-shadow(0 0 10px #ea4884)
+    drop-shadow(0 0 30px #ea4884)
+    drop-shadow(0 0 60px #ea4884)
+    drop-shadow(0 0 100px #ea4884)
+    drop-shadow(0 0 150px #ea4884);
+}
+
+.container .card:nth-child(2):hover ion-icon {
+  filter: drop-shadow(0 0 10px #487bea)
+    drop-shadow(0 0 30px #487bea)
+    drop-shadow(0 0 60px #487bea)
+    drop-shadow(0 0 100px #487bea)
+    drop-shadow(0 0 150px #487bea);
+}
+
+.container .card:nth-child(3):hover ion-icon {
+  filter: drop-shadow(0 0 10px #5bea48)
+    drop-shadow(0 0 30px #5bea48)
+    drop-shadow(0 0 60px #5bea48)
+    drop-shadow(0 0 100px #5bea48)
+    drop-shadow(0 0 150px #5bea48);
+}
