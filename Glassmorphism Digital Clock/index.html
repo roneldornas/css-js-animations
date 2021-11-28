@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Digital Clock</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- https://www.youtube.com/watch?v=Qdcj4rV82ek -->
+</head>
+<body>
+  <section>
+    <div class="clock">
+      <div class="container">
+        <h2 id="hours">00</h2>
+        <h2 class="dot">:</h2>
+        <h2 id="minutes">00</h2>
+        <h2 class="dot">:</h2>
+        <h2 id="seconds">00</h2>
+        <span id="ampm">AM</span>
+      </div>
+    </div>  
+  </section>
+
+  <script>
+    function clock() {
+      let hours = document.querySelector('#hours');
+      let minutes = document.querySelector('#minutes');
+      let seconds = document.querySelector('#seconds');
+      let ampm = document.querySelector('#ampm');
+
+      let day = new Date();
+      
+      let hh = day.getHours();
+      let mm = day.getMinutes();
+      let ss = day.getSeconds();
+
+      if (hh > 12) {
+        ampm = 'PM';
+        hh = hh - 12; 
+      }
+
+      hh = (hh < 10) ? '0' + hh : hh;
+      mm = (mm < 10) ? '0' + mm : mm;
+      ss = (ss < 10) ? '0' + ss : ss;
+
+      let am = 'AM'
+
+      hours.innerHTML = hh;
+      minutes.innerHTML = mm;
+      seconds.innerHTML = ss;
+    }
+
+    let interval = setInterval(clock, 1000);
+  </script>
+</body>
+</html>
